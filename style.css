@@ -1,0 +1,35 @@
+ /* estilo de la pagina en color y el color de las secciones */
+ *{
+   box-sizing: border-box; /*no deja que los paddin se sumen al tamaño del contenedor si
+   no que vienen incluidos en el paddin*/
+   font-family: 'Courier New', Courier, monospace; /*fuente de la letra */
+}
+body{
+   margin: 100px; /*margenm de la parte superior*/
+   padding: 100px;
+   height: auto; /*tamaño de la pagina*/
+   display: flex; /*contenido */
+   justify-content: center; /*contendio centrado */
+   align-items: center;
+   text-align: center; /*centra el texto */
+   align-content: center;
+}
+#box{
+  
+   background-color: rgb(37, 229, 239);/*color*/
+   padding: 50px; /*relleno*/
+}
+
+#PRODUCTOS{
+   align-content: center; /*contenido de la seccion centrada*/
+   margin: 10px;
+   height: 300px; /*alto*/
+   width: 250px; /*ancho*/
+   background-color: rgb(233, 226, 33);
+}
+
+#cabe{
+  
+   background-color: rgba(230, 141, 8, 0.75);
+   padding: 30px;
+}
