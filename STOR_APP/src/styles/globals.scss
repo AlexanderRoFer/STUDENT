@@ -1,4 +1,98 @@
-*{
-    box-sizing: border-box; /*para que el padding que se coloca a los contenedores no sume a lo alto y ancho si no que sea interno. no cambie las medidas */ 
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+:root{
+    --max-width: 980px;
+    --accent: #0b74de;
+    --muted: #6c757d;
+    --danger: #d9534f;
+    --card-bg: rgba(255,255,255,0.88);
+    --glass-border: rgba(255,255,255,0.6);
 }
+
+*{box-sizing: border-box}
+
+html, body {height:100%;}
+body{
+    margin:0;
+    font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    /* Background: place an image at /bg.svg in public or change URL */
+    background-image: linear-gradient(180deg, rgba(12,34,56,0.25), rgba(2,6,23,0.25)), url('/bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color:#222;
+}
+
+.site-wrapper{min-height:100%;display:flex;flex-direction:column}
+
+.site-header{backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);}
+.site-header nav{
+    display:flex;
+    gap:14px;
+    padding:14px 20px;
+    align-items:center;
+    background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.45));
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+.site-header a{color:var(--accent);text-decoration:none;font-weight:600}
+
+.container{
+    max-width: var(--max-width);
+    margin: 28px auto;
+    padding: 20px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.2);
+    border: 1px solid var(--glass-border);
+}
+
+.page-title{font-size:1.6rem;margin:0 0 12px 0;color:#07203a}
+
+.form{display:flex;flex-direction:column;gap:12px;background:linear-gradient(180deg, rgba(11,116,222,0.08), rgba(255,255,255,0.04));padding:16px;border-radius:10px;border:1px solid rgba(11,116,222,0.12)}
+.form label{display:flex;flex-direction:column;font-size:14px;color:#163040}
+.form input,.form select,.form textarea{
+    padding:10px;border:1px solid #e3e8ed;border-radius:8px;background:#fff;
+}
+.form button{
+    padding:10px 14px;background:linear-gradient(90deg,var(--accent),#0366b6);color:white;border:none;border-radius:8px;cursor:pointer;font-weight:600
+}
+.message{margin-top:8px;color:var(--muted)}
+
+.list{list-style:none;padding:0;margin:0}
+.list li{padding:12px 0;border-bottom:1px solid #eef3f6}
+
+.danger{margin-left:12px;padding:6px 10px;background:var(--danger);color:white;border:none;border-radius:8px}
+.logout{margin-left:12px;padding:8px 12px;background:var(--muted);color:white;border:none;border-radius:8px;cursor:pointer}
+
+/* Card for small panels */
+.panel{background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,250,250,0.9));padding:16px;border-radius:10px;border:1px solid rgba(0,0,0,0.04)}
+
+/* Reserve page layout: profile (left) + form (right) */
+.reserve-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.profile-card{padding:20px;border-radius:12px;background:linear-gradient(180deg,rgba(11,116,222,0.06),rgba(255,255,255,0.02));border:1px solid rgba(11,116,222,0.08)}
+.profile-avatar{width:100%;height:220px;border-radius:10px;overflow:hidden;margin-bottom:14px}
+.profile-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.business-name{font-size:1.4rem;font-weight:700;color:#07203a;margin-bottom:6px}
+.business-desc{color:#113444;font-size:0.98rem;line-height:1.45}
+
+/* Form panel to match profile */
+.form-panel{background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(250,250,250,0.85));padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)}
+
+@media (max-width:920px){
+    .reserve-grid{grid-template-columns:1fr;}
+    .profile-avatar{height:180px}
+}
+
+/* Responsive */
+@media (max-width:720px){
+    .container{margin:16px;padding:14px;border-radius:8px}
+    .site-header nav{flex-wrap:wrap}
+}
+
+/* Utility helpers */
+.row{display:flex;gap:12px}
+.col{flex:1}
+
+.small{font-size:0.9rem;color:#5b6b74}
+
+/* If you don't want a local image, replace '/bg.jpg' with an online URL */
